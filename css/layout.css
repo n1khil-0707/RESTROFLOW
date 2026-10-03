@@ -1,0 +1,39 @@
+/* ---------- Header ---------- */
+.site-header { position: sticky; top: 0; z-index: 40; background: var(--cream); box-shadow: 0 .5vw 1.6vw rgba(0,0,0,.08); }
+.site-header__inner { display: flex; align-items: center; gap: clamp(1rem, 2.1vw, 2.6rem); padding: clamp(.7rem, 2vw, 2.4rem) var(--pad-x); }
+.brand { font-family: var(--font-display); font-weight: 900; font-stretch: 125%; font-size: clamp(1.25rem, 1.9vw, 2.4rem); text-transform: uppercase; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+.site-nav ul { display: flex; gap: clamp(.9rem, 2vw, 2.6rem); }
+.site-nav a { font-family: var(--font-display); font-weight: 700; font-stretch: 88%; font-size: clamp(.85rem, 1.2vw, 1.6rem); text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: opacity .2s; }
+.site-nav a:hover { opacity: .6; }
+.site-nav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .4em; }
+.site-header__cta { margin-left: auto; font-size: clamp(.9rem, 1.25vw, 1.6rem); padding: clamp(.6rem, 1.6vw, 2rem) clamp(1.1rem, 2.7vw, 3.4rem); text-decoration: none; }
+
+.nav-toggle { display: none; flex-direction: column; gap: 5px; padding: .6rem; background: none; border: 0; cursor: pointer; }
+.nav-toggle__line { width: 26px; height: 3px; background: currentColor; transition: transform .25s var(--ease), opacity .2s; }
+.is-open .nav-toggle__line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.is-open .nav-toggle__line:nth-child(2) { opacity: 0; }
+.is-open .nav-toggle__line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Landing page: transparent header over the hero photo */
+.site-header.is-overlay { position: absolute; left: 0; right: 0; background: transparent; box-shadow: none; color: #fff; }
+.is-overlay .btn-dark { background: #d6d6d6; color: var(--ink); }
+
+@media (max-width: 1360px) {
+  .nav-toggle { display: flex; }
+  .site-nav { position: absolute; top: 100%; left: 0; right: 0; padding: 1rem var(--pad-x) 1.5rem; background: var(--cream); color: var(--ink); box-shadow: 0 1rem 1.5rem rgba(0,0,0,.12); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .2s, transform .25s var(--ease), visibility .2s; }
+  .site-nav ul { flex-direction: column; gap: 1rem; }
+  .site-nav a { font-size: 1.1rem; }
+  .is-open .site-nav { opacity: 1; visibility: visible; transform: none; }
+  .is-overlay .site-nav { background: rgba(28,28,28,.96); color: #fff; }
+  .site-header__cta { font-size: .9rem; padding: .6rem 1.1rem; }
+}
+
+/* ---------- Page wrapper ---------- */
+.page { padding: clamp(2.5rem, 7.5vw, 9rem) var(--pad-x) clamp(3rem, 6vw, 7rem); min-height: 60vh; }
+.eyebrow { font-weight: 500; margin-bottom: .8vw; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--gray); padding: 6vw var(--pad-x) 11vw; }
+.site-footer__inner { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1.5rem 3rem; }
+.footer-brand, .footer-mail { font-size: clamp(1.3rem, 3vw, 3.8rem); text-decoration: none; text-transform: uppercase; overflow-wrap: anywhere; transition: opacity .2s; }
+.footer-brand:hover, .footer-mail:hover { opacity: .6; }

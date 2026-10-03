@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EXPENSES — RestoFlow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <script defer src="../data/demo-data.js"></script>
+  <script defer src="../js/api.js"></script>
+  <script defer src="../js/calc.js"></script>
+  <script defer src="../js/ui.js"></script>
+  <script defer src="../js/navigation.js"></script>
+  <script defer src="../js/app.js"></script>
+  <script defer src="../js/forms.js"></script>
+  <script defer src="../js/expenses.js"></script>
+</head>
+<body data-page="expenses" data-root="../">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="page">
+    <p class="eyebrow">Restaurant finance</p>
+    <div class="page-head">
+      <div class="title-card">
+        <h1 class="display">Expenses</h1>
+        <p>Manage your expense records.</p>
+      </div>
+      <button id="add-btn" class="btn btn-dark btn-xl" type="button">+ Add expenses</button>
+    </div>
+
+    <div class="toolbar">
+      <label class="visually-hidden" for="search">Search expenses</label>
+      <input id="search" class="input" type="search" placeholder="Search description, vendor or date…">
+      <label class="visually-hidden" for="filter">Filter by category</label>
+      <select id="filter" class="input"><option value="all">All categories</option></select>
+    </div>
+
+    <section class="data-card data-card--tall" aria-label="Expense records">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th><th scope="col">Description</th>
+            <th scope="col" class="cell-center">Category</th><th scope="col" class="cell-center">Amount</th>
+            <th scope="col" class="cell-actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="expense-body"><tr><td colspan="5" class="empty">Loading…</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>
