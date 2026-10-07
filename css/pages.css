@@ -1,0 +1,46 @@
+/* ---------- Reports ---------- */
+.report-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8.5vw; margin-top: 3.6vw; }
+.report-heading { grid-column: 1; text-align: center; font-size: clamp(1.6rem, 2.5vw, 3.2rem); }
+.pl-card { grid-column: 1; margin-top: 1.6vw; padding: 1.2vw 1vw; }
+.pl-list > div { display: grid; grid-template-columns: 74% 1fr; padding: .85vw 0; }
+.export-card { grid-column: 2; grid-row: 2; margin-top: 1.6vw; padding: 3.8vw; }
+.export-card h2 { font-size: clamp(1.6rem, 2.7vw, 3.4rem); margin-bottom: 1vw; }
+.export-actions { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2vw; }
+.export-actions .btn { flex: 1 1 10rem; min-height: 7.6vw; padding: 1rem; font-size: clamp(.95rem, 1.25vw, 1.6rem); }
+@media (max-width: 900px) {
+  .report-grid { grid-template-columns: 1fr; }
+  .export-card { grid-column: 1; grid-row: auto; padding: 1.5rem; }
+  .pl-card { padding: 1rem; } .pl-list > div { padding: .6rem 0; }
+}
+
+/* ---------- Menu & food cost ---------- */
+.menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .9vw; margin-top: 3.6vw; }
+.menu-card { background: var(--gray); padding: 1vw 1vw 1.6vw; transition: transform .25s var(--ease), box-shadow .25s; }
+.menu-card:hover { transform: translateY(-.3vw); box-shadow: 0 1vw 2vw rgba(0,0,0,.12); }
+.menu-card__head { display: flex; justify-content: space-between; align-items: center; gap: .5rem; margin-bottom: 2.6vw; }
+.menu-card__head h2 { font-size: clamp(1.1rem, 1.45vw, 1.9rem); font-weight: 500; }
+.icon-actions { display: flex; }
+.kv > div { display: flex; justify-content: space-between; gap: 1rem; padding: .7vw 0; font-size: clamp(1rem, 1.25vw, 1.6rem); }
+@media (max-width: 1100px) { .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } .menu-card { padding: 1rem; } .menu-card__head { margin-bottom: 1.2rem; } .kv > div { padding: .4rem 0; } }
+@media (max-width: 560px) { .menu-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Recipe editor ---------- */
+.menu-card .btn-recipe { width: 100%; margin-top: 1rem; }
+.recipe-hint { font-size: .9em; font-style: italic; margin-bottom: 1rem; }
+.recipe-rows { display: grid; gap: .6rem; margin-bottom: 1rem; }
+.recipe-row { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto; gap: .5rem; align-items: center; }
+.recipe-row select, .recipe-row input { width: 100%; padding: .65em .85em; background: #fdf6e8; border: 1px solid #d9cdb8; border-radius: 0; }
+.recipe-row select:focus, .recipe-row input:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 2px var(--ink); }
+.recipe-total { font-weight: 500; margin: 1rem 0 .4rem; }
+@media (max-width: 560px) {
+  .recipe-row { grid-template-columns: 1fr 1fr auto; }
+  .recipe-row select:first-child { grid-column: 1 / -1; }
+}
+
+/* ---------- Inventory ---------- */
+.data-table--inventory { min-width: 860px; }
+.data-table--inventory th, .data-table--inventory td { padding-inline: .5rem; }
+
+/* ---------- Settings ---------- */
+.settings-card { max-width: 60rem; }
+.settings-note { margin-top: 1.2rem; font-size: .85em; font-style: italic; }

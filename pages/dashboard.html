@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DASHBOARD — RestoFlow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script defer src="../data/demo-data.js"></script>
+  <script defer src="../js/api.js"></script>
+  <script defer src="../js/calc.js"></script>
+  <script defer src="../js/ui.js"></script>
+  <script defer src="../js/navigation.js"></script>
+  <script defer src="../js/app.js"></script>
+  <script defer src="../js/dashboard.js"></script>
+</head>
+<body data-page="dashboard" data-root="../">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="page">
+  <p class="eyebrow">Dashboard</p>
+  <h1 class="display">Restaurant Finance</h1>
+
+    <section id="kpi-main" class="stat-grid" aria-label="Key figures"><p class="loading">Loading…</p></section>
+    <section id="kpi-more" class="stat-grid stat-grid--small" aria-label="More figures"></section>
+
+    <div class="chart-row">
+      <section aria-label="Revenue versus expenses">
+        <h2 class="display chart-title">Revenue vs Expenses</h2>
+        <div id="chart" role="img" aria-label="Bar chart comparing revenue and expenses"></div>
+        <ul class="legend">
+          <li><i class="l-rev"></i>Revenue</li>
+          <li><i class="l-exp"></i>Expenses</li>
+        </ul>
+        <label class="visually-hidden" for="period">Chart period</label>
+        <select id="period" class="input input--period">
+          <option value="monthly">monthly</option>
+          <option value="quarterly">quarterly</option>
+        </select>
+      </section>
+
+      <aside class="panel" aria-label="Expense breakdown">
+        <h2 class="display panel-title">Expense breakdown</h2>
+        <ul id="breakdown-list" class="breakdown"></ul>
+      </aside>
+    </div>
+
+    <section class="data-card txn-card" aria-label="Recent transactions">
+      <h2 class="txn-title">Recent transactions</h2>
+      <ul id="txn-list"></ul>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>
